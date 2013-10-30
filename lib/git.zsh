@@ -1,8 +1,12 @@
 # get the name of the branch we are on
 function git_prompt_info() {
+# Set up ls colors for solarized
+  if [[ $(uname) == "Darwin" ]] ; then
+	return
+  fi
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
   ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
-  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_CLEAN$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
 
@@ -22,11 +26,14 @@ parse_git_dirty() {
     fi
     if [[ -n $GIT_STATUS ]]; then
       echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
+	  echo 'HELP1'
     else
       echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
+	  echo 'HELP2'
     fi
   else
     echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
+	echo 'HELP3'
   fi
 }
 
