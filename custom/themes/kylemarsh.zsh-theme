@@ -1,4 +1,5 @@
-PROMPT='%{$fg[red]%}➜ %{$fg[blue]%}%n%{$reset_color%}@%{$fg[cyan]%}%m %{$fg[green]%}%p %{$fg[yellow]%}%6c $(git_prompt_info)%{$reset_color%}%% '
+PROMPT='%{$fg[blue]%}%n%{$reset_color%}@%{$fg[cyan]%}%m %{$fg[green]%}%p %{$fg[yellow]%}%6c $(git_prompt_info)
+$(virtualenv_prompt_info)%{$fg[white]%}%%%{$reset_color%} '
 
 #PROMPT='Colors:
 #%{$fg[black]%}black
