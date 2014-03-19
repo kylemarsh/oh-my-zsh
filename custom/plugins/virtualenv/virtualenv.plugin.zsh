@@ -1,6 +1,6 @@
 function virtualenv_prompt_info(){
   if [[ -n $VIRTUAL_ENV ]]; then
-    printf "%s(%s)" "%{$reset_color%}" ${${VIRTUAL_ENV}:t}
+    printf "%s(%s) " "%{$reset_color%}" ${${VIRTUAL_ENV}:t}
   fi
 }
 
